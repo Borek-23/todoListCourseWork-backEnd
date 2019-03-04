@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bafa956f-d3b1-498c-9ba3-405029f972a3" name="Default Changelist" comment="" />
+    <list default="true" id="bafa956f-d3b1-498c-9ba3-405029f972a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/bin/www">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -25,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            <state relative-caret-position="19">
+              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -35,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/routes/TodoListRoute.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="358">
-              <caret line="86" column="30" lean-forward="true" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -184,12 +186,12 @@
       <workItem from="1551361070355" duration="1502000" />
       <workItem from="1551436337759" duration="12148000" />
       <workItem from="1551531562288" duration="22495000" />
-      <workItem from="1551709753619" duration="509000" />
+      <workItem from="1551709753619" duration="645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50190000" />
+    <option name="totallyTimeSpent" value="50326000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="44" width="1916" height="1034" extended-state="6" />
@@ -286,14 +288,14 @@
     <entry file="file://$PROJECT_DIR$/routes/TodoListRoute.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
-          <caret line="86" column="30" lean-forward="true" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -302,8 +304,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="19">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
