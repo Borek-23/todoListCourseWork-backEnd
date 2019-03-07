@@ -8,9 +8,13 @@ function App(config) {
     const cookieParser = require('cookie-parser');
     const logger = require('morgan');
 
+    // 'mongodb://' + config.db.host + '/todolistappdb', {useNewUrlParser: true, user: config.db.user || undefined, password: config.db.password || undefined},
+
+
+
     // Here is the connection to the database using Mongoose
     const mongoose = require('mongoose');
-    mongoose.connect('mongodb://' + config.db.host + '/todolistappdb', {useNewUrlParser: true, user: config.db.user || undefined, password: config.db.password || undefined}, function (err) {
+    mongoose.connect('mongodb+srv://Lecturer:mobilewebtech2coursework@todolistapp-szuux.mongodb.net/test?retryWrites=true', {useNewUrlParser: true}, function (err) {
         if (err) {
             // If there is no databse to connect to, I log the error and won't proceed
             console.error(err);

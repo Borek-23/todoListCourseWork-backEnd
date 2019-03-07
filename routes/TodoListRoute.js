@@ -38,7 +38,7 @@ function TodoListRoute(express, todoListService) {
             }
             // If everything went corretly, return back the search result AS an object
             // Object is there so the structure stays the same, but object notation is changeable
-            return res.send({todoLists: todoLists});
+            return res.send({payload: todoLists}); //
         })
 
     });
