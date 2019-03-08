@@ -54,7 +54,10 @@ function TodoListService(todoListModel) {
     };
 
     this.updateById = function (id, object, callback) {
-        return todoListModel.findOneAndUpdate({_id: id}, object, callback)
+        if ('tasks' in object)
+            return todoListModel.findOneAndUpdate({_id: id}, {$addToSet: object}, callback);
+        else
+            return todoListModel.findOneAndUpdate({_id: id}, object, callback)
     };
 
     // Return the service
