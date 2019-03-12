@@ -18,7 +18,8 @@ function TodoListModel(mongoose) {
         tasks: [{
                 type: String
             }
-        ]
+        ],
+        comments: String
     });
 
     // Return model using collection reference and collection name

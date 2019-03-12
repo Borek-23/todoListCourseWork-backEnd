@@ -3,13 +3,14 @@
 function TodoListService(todoListModel) {
     // Here is a function called save that accepts my new 'todoList' and will have callback
     // Callback is necessary because this is an I/O operation on the database
-    this.save = function SaveTodoList(name, description, tasks, status, callback) {
+    this.save = function SaveTodoList(name, description, tasks, status, comments, callback) {
         // Creating new collection todolist and setting name and description to be set on call
         var newTodoList = new todoListModel;
         newTodoList.name = name;
         newTodoList.description = description;
         newTodoList.status = status;
         newTodoList.tasks = tasks;
+        newTodoList.comments = comments;
         // When save, call back with the error or saved todolist
         newTodoList.save(function (err, savedTodoList) {
             if (err) {

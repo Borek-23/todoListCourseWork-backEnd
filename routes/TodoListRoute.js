@@ -10,10 +10,11 @@ function TodoListRoute(express, todoListService) {
         var name = req.body.name;
         var description = req.body.description;
         var tasks = req.body.tasks;
+        var comments = req.body.comments;
         var status = "In Progress";
 
         // Call the service and its callback (return it so accidental code won't get executed)
-        return todoListService.save(name, description, tasks, status, function (err, savedTodoList) {
+        return todoListService.save(name, description, tasks, status, comments, function (err, savedTodoList) {
             // if there is an error, throw it and return 500 http code
             if (err) {
                 console.error(err);
@@ -92,11 +93,6 @@ function TodoListRoute(express, todoListService) {
                 console.error(err);
                 return res.status(500).send('Failed');
             }
-            // function updateSingleTask(data) {
-            //     const tasks = data[0].body.tasks;
-            //     for (var i = 0; i < data.length; i++) {
-            //         tasks.push(data[i].tasks);
-            //     }
 
             return res.status(200).send('Updated successfully!');
         });
