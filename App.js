@@ -14,7 +14,7 @@ function App(config) {
 
     // Here is the connection to the database using Mongoose
     const mongoose = require('mongoose');
-    mongoose.connect('mongodb+srv://Lecturer:mobilewebtech2coursework@todolistapp-szuux.mongodb.net/test?retryWrites=true', {useNewUrlParser: true}, function (err) {
+    mongoose.connect('mongodb+srv://Lecturer:mobilewebtech2@todolistapp-szuux.mongodb.net/test?retryWrites=true', {useNewUrlParser: true}, function (err) {
         if (err) {
             // If there is no databse to connect to, I log the error and won't proceed
             console.error(err);

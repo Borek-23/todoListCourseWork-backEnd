@@ -11,12 +11,13 @@ function TodoListModel(mongoose) {
             type: String, default: function dateFormatter() {
                 var date = new Date();
                 var dayTime = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-                var fullDate = date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear();
+                var fullDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
                 return fullDate + "-" + dayTime
             }
         },
-        tasks: [
-            String
+        tasks: [{
+                type: String
+            }
         ]
     });
 
