@@ -15,11 +15,9 @@ function TodoListModel(mongoose) {
                 return fullDate + "-" + dayTime
             }
         },
-        tasks: [{
-                type: String
-            }
-        ],
-        comments: String
+        tasks: [
+            String
+        ]
     });
 
     // Return model using collection reference and collection name

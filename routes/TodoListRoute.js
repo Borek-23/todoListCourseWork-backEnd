@@ -9,8 +9,10 @@ function TodoListRoute(express, todoListService) {
         // These are attributes that to-do list would have
         var name = req.body.name;
         var description = req.body.description;
-        var tasks = req.body.tasks;
-        var comments = req.body.comments;
+        // var tasks = req.body.tasks;
+        var tasks = req.body.listItems.tasks;
+        // var comments = req.body.comments;
+        var comments = req.body.listItems.comments;
         var status = "In Progress";
 
         // Call the service and its callback (return it so accidental code won't get executed)
@@ -86,8 +88,8 @@ function TodoListRoute(express, todoListService) {
     // Updating tasks by their IDs
     router.put('/updateLists/:todoListId', function(req, res) {
         const body = req.body;
-
         const todoListId = req.params.todoListId;
+
         return todoListService.updateById(todoListId, body, function (err) {
             if (err) {
                 console.error(err);

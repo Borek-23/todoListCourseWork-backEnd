@@ -9,8 +9,10 @@ function TodoListService(todoListModel) {
         newTodoList.name = name;
         newTodoList.description = description;
         newTodoList.status = status;
-        newTodoList.tasks = tasks;
-        newTodoList.comments = comments;
+        // newTodoList.tasks = tasks;
+        newTodoList.listItems.tasks = tasks;
+        // newTodoList.comments = comments;
+        newTodoList.listItems.comments = comments;
         // When save, call back with the error or saved todolist
         newTodoList.save(function (err, savedTodoList) {
             if (err) {
@@ -58,7 +60,7 @@ function TodoListService(todoListModel) {
         if ('tasks' in object)
             return todoListModel.findOneAndUpdate({_id: id}, {$addToSet: object}, callback);
         else
-            return todoListModel.findOneAndUpdate({_id: id}, object, callback)
+            return todoListModel.findOneAndUpdate({_id: id}, object, callback);
     };
 
     // Return the service
