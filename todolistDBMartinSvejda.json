@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5c8842fe2cf0772d0cf9352d"},"tasks":["moonlight","flotila"],"listCreatedOn":"12/3/2019-23:38:38","name":"django","description":"hell yes","status":"In Progress","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c88441c9545272d9dd1c644"},"tasks":["moonlight","flotila","bongos too","bruno"],"listCreatedOn":"12/3/2019-23:43:24","name":"help me","description":"hell yes","status":"In Progress","comments":"do bongos now","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c88cabdf9619c1bc536a69e"},"listItems":{"tasks":["johno"]},"listCreatedOn":"13/3/2019-9:17:49","name":"hello","description":"hell yes","status":"In Progress","__v":{"$numberInt":"0"},"tasks":["bruno"]}
