@@ -3,25 +3,18 @@
 function TodoListService(todoListModel) {
     // Here is a function called save that accepts my new 'todoList' and will have callback
     // Callback is necessary because this is an I/O operation on the database
-    this.save = function SaveTodoList(name, description, tasks, status, comments, callback) {
-        // Creating new collection todolist and setting name and description to be set on call
-        var newTodoList = new todoListModel;
-        newTodoList.name = name;
-        newTodoList.description = description;
-        newTodoList.status = status;
-        // newTodoList.tasks = tasks;
-        newTodoList.listItems.tasks = tasks;
-        // newTodoList.comments = comments;
-        newTodoList.listItems.comments = comments;
-        // When save, call back with the error or saved todolist
-        newTodoList.save(function (err, savedTodoList) {
-            if (err) {
-                console.error(err);
-                return callback(err)
-            }
-
-            return callback(undefined, savedTodoList);
-        });
+    this.save = function SaveTodoList(body) {
+        return new Promise((resolve, reject) => {
+            // Creating new collection todolist and setting name and description to be set on call
+            var newTodoList = new todoListModel(body);
+            newTodoList.save(function (err, savedTodoList) {
+                if (err) {
+                    console.error(err);
+                    reject(err);
+                }
+                return resolve(savedTodoList);
+            });
+        })
     };
 
     // Now I need a function that finds all the lists and accepts a callback
@@ -57,10 +50,7 @@ function TodoListService(todoListModel) {
     };
 
     this.updateById = function (id, object, callback) {
-        if ('tasks' in object)
-            return todoListModel.findOneAndUpdate({_id: id}, {$addToSet: object}, callback);
-        else
-            return todoListModel.findOneAndUpdate({_id: id}, object, callback);
+        return todoListModel.findOneAndUpdate({_id: id}, object, callback);
     };
 
     // Return the service

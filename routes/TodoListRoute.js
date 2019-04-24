@@ -7,26 +7,21 @@ function TodoListRoute(express, todoListService) {
     router.post('/', function (req, res) {
         // Post request will come from the body
         // These are attributes that to-do list would have
-        var name = req.body.name;
-        var description = req.body.description;
-        // var tasks = req.body.tasks;
-        var tasks = req.body.listItems.tasks;
-        // var comments = req.body.comments;
-        var comments = req.body.listItems.comments;
-        var status = "In Progress";
+        const name = req.body.name,
+            description = req.body.description,
+            tasks = req.body.tasks,
+            status = "In Progress";
+
 
         // Call the service and its callback (return it so accidental code won't get executed)
-        return todoListService.save(name, description, tasks, status, comments, function (err, savedTodoList) {
-            // if there is an error, throw it and return 500 http code
-            if (err) {
+        return todoListService.save({name, description, tasks})
+            .then(result => {
+                return res.status(201).send(result);
+            })
+            .catch(err => {
                 console.error(err);
                 return res.status(500).send();
-            }
-
-            // If everything is OK, return saved todoList to the user (with code 201 which means HTTP created)
-            // and must return, although I already know it is JSON, I can only use send() method
-            return res.status(201).send(savedTodoList);
-        });
+            })
     });
 
     // Here I need a get request so to return the lists only when requested, not always automatically
@@ -77,11 +72,10 @@ function TodoListRoute(express, todoListService) {
         return todoListService.deleteById(todoListId, function (err, todoList) {
             if (err) {
                 console.error(err);
-                return res.status(500).send('failed');
+                return res.status(500).json({message: "Failed to remove task from database."});
             }
-
             // Because the action (deletion) was completed successfully, I shall return 'no content' code
-            return res.status(204).send();
+            res.status(202).send({message: "Successfully deleted the resource."});
         });
     });
 
@@ -90,7 +84,7 @@ function TodoListRoute(express, todoListService) {
         const body = req.body;
         const todoListId = req.params.todoListId;
 
-        return todoListService.updateById(todoListId, body, function (err) {
+        todoListService.updateById(todoListId, body, function (err) {
             if (err) {
                 console.error(err);
                 return res.status(500).send('Failed');
