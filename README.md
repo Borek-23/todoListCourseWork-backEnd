@@ -12,6 +12,6 @@ and run again. Runs on port 3001.
 
 Test in web browser or Postman or similar.
 
-#### Front-End
+### Front-End
 
-The front-end app is available from todoListCoursework-frontEnd repository
+The front-end app is available from todoListCourseWork-frontEnd repository
